@@ -1,4 +1,4 @@
-# BioCoder MD — Phase 1 Scaffold
+# BioCoder MD - Phase 1 Scaffold
 
 Where machine learning meets precision healthcare. This is the foundational
 codebase for the four pillars: the ML sandbox, the clinical apps hub, the
