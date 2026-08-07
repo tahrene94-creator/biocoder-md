@@ -22,7 +22,7 @@ npm run dev
 
 The palette is built around a clinical monitor: a deep navy/slate field
 (`bg-deep #0A0F1A`, `bg-panel #111A2B`), one emerald "signal" accent
-(`#12B886`) used the way a vitals monitor uses green — for anything live,
+(`#12B886`) used the way a vitals monitor uses green for anything live,
 normal, or actionable — and crisp white/ink text for clarity. Amber and rose
 are reserved for warnings and elevated-risk states only.
 
