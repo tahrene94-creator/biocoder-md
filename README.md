@@ -1,4 +1,4 @@
-# BioCoder MD — Phase 1 Scaffold
+# BioCoder MD - Phase 1 Scaffold
 
 Where machine learning meets precision healthcare. This is the foundational
 codebase for the four pillars: the ML sandbox, the clinical apps hub, the
@@ -9,7 +9,7 @@ Academy, and the `/insights` dual-perspective review hub.
 - Next.js 14 (App Router) + TypeScript
 - Tailwind CSS, design tokens in `tailwind.config.ts`
 - `lucide-react` icons, `recharts` for clinical/data charts, `framer-motion` available for future motion work
-- Fonts: **Space Grotesk** (display), **IBM Plex Sans** (body), **IBM Plex Mono** (data/metrics — used for anything numeric: AUROC, pKd, DOIs, code)
+- Fonts: **Space Grotesk** (display), **IBM Plex Sans** (body), **IBM Plex Mono** (data/metrics used for anything numeric: AUROC, pKd, DOIs, code)
 
 ## Getting started
 
@@ -22,7 +22,7 @@ npm run dev
 
 The palette is built around a clinical monitor: a deep navy/slate field
 (`bg-deep #0A0F1A`, `bg-panel #111A2B`), one emerald "signal" accent
-(`#12B886`) used the way a vitals monitor uses green — for anything live,
+(`#12B886`) used the way a vitals monitor uses green for anything live,
 normal, or actionable — and crisp white/ink text for clarity. Amber and rose
 are reserved for warnings and elevated-risk states only.
 
