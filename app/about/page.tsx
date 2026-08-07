@@ -8,10 +8,10 @@ const TEAM: TeamMember[] = [
     role: "Founder & Director",
     photo: "/team/tah-rene-mih.jpg",
     location: "Bamenda, Cameroon",
-    bio: "Tah Rene Mih is a licensed Medical Doctor and AI researcher building the bridge between clinical medicine and biomedical machine learning. He is completing an M.Eng. in AI for One Health at Université Grenoble-Alpes and currently works as a Research Intern in Computational Chemistry at the University of Buea Center for Drug Discovery (UB-CeDD), applying machine learning and omics analysis to drug discovery and molecular characterization. Before moving into AI, he practiced clinical medicine at Nkambe Hospital, treating over 3,000 patients a year, and led data quality assurance for a 5,000+ point nutrition study with IRESCO/WFP. He founded BioCoder MD to give researchers, clinicians, students, and patients one place to meet in the middle.",
+    bio: "Tah Rene Mih is a licensed Medical Doctor and AI researcher building the bridge between clinical medicine and biomedical machine learning. He completed an M.Eng. in AI for One Health at Université Grenoble-Alpes and currently works as a Research Intern in Computational Chemistry at the University of Buea Center for Drug Discovery (UB-CeDD), applying machine learning and omics analysis to drug discovery and molecular characterization. Before moving into AI, he practiced clinical medicine at Nkambe Regional Hospital Annexe, Cameroon, and worked seasonally with IRESCO/WFP project as a data lead. He founded BioCoder MD to give researchers, clinicians, students, and patients one place to meet in the middle.",
     credentials: [
       "M.D., University of Bamenda",
-      "M.Eng. AI for One Health, UGA (in progress)",
+      "M.Eng. AI for One Health, UGA",
       "DTM&H, Bernhard Nocht Institute",
       "M.Sc. Clinical Biology, University of Dschang",
       "Licensed MD, Cameroon Medical Council",
