@@ -44,8 +44,8 @@ export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
   // Sidebar is a wayfinding aid for the app-like sections; keep it off the
-  // marketing landing page so the hero can breathe full-width.
-  if (pathname === "/") return null;
+  // marketing landing and about pages so those can use the full width.
+  if (pathname === "/" || pathname === "/about") return null;
 
   return (
     <aside

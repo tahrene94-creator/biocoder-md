@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Activity, Moon, Sun, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
+  { href: "/about", label: "About" },
   { href: "/models", label: "Models" },
   { href: "/apps", label: "Clinical Apps" },
   { href: "/academy", label: "Academy" },
