@@ -12,12 +12,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Light academic/institutional look is now the site-wide default -- see the
+   bg.deep / ink.DEFAULT token values in tailwind.config.ts, which every
+   component already references. */
 body {
   @apply bg-bg-deep text-ink font-body antialiased;
-}
-
-body.light-mode {
-  @apply bg-bg-light text-ink-onLight;
 }
 
 ::selection {

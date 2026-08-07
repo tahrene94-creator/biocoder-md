@@ -195,20 +195,20 @@ export default function VariantClassifierSandbox() {
             <div className="h-[180px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={result.scores} layout="vertical" margin={{ left: 0, right: 16 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#243247" horizontal={false} />
-                  <XAxis type="number" domain={[0, 1]} tick={{ fill: "#5B6981", fontSize: 11 }} stroke="#243247" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E3E6EB" horizontal={false} />
+                  <XAxis type="number" domain={[0, 1]} tick={{ fill: "#4B5768", fontSize: 11 }} stroke="#E3E6EB" />
                   <YAxis
                     type="category"
                     dataKey="model"
                     width={140}
-                    tick={{ fill: "#93A1B7", fontSize: 11.5 }}
-                    stroke="#243247"
+                    tick={{ fill: "#1A2233", fontSize: 11.5 }}
+                    stroke="#E3E6EB"
                   />
                   <Bar dataKey="score" radius={[0, 4, 4, 0]}>
                     {result.scores.map((entry, i) => (
                       <Cell
                         key={entry.model}
-                        fill={i === result.scores.length - 1 ? "#12B886" : "#3A4A63"}
+                        fill={i === result.scores.length - 1 ? "#12B886" : "#C7CDD6"}
                       />
                     ))}
                   </Bar>
