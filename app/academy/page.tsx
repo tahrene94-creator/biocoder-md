@@ -71,10 +71,10 @@ export default function AcademyPage() {
   return (
     <div className="mx-auto max-w-[1200px] px-5 py-12 md:px-8">
       <p className="eyebrow">Academy</p>
-      <h1 className="mt-3 font-display text-[32px] font-semibold tracking-tight text-ink sm:text-[38px]">
+      <h1 className="mt-3 font-display text-[36px] font-semibold tracking-tight text-ink sm:text-[42px]">
         Your training dashboard.
       </h1>
-      <p className="mt-3 max-w-[62ch] text-[14.5px] leading-relaxed text-ink-dim">
+      <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-ink-dim">
         Self-paced modules with a real code workspace and one-click Colab launches.
         Certificates unlock automatically once every module in a course is complete.
       </p>
@@ -82,22 +82,22 @@ export default function AcademyPage() {
       {/* Progress summary */}
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         <div className="rounded-panel border border-slate-line bg-bg-panel p-5">
-          <p className="flex items-center gap-2 text-[11.5px] text-ink-faint">
+          <p className="flex items-center gap-2 text-[12.5px] text-ink-faint">
             <CircleCheck className="h-3.5 w-3.5 text-signal" /> Completed
           </p>
-          <p className="data-figure mt-2 text-[26px] text-ink">{completed}</p>
+          <p className="data-figure mt-2 text-[28px] text-ink">{completed}</p>
         </div>
         <div className="rounded-panel border border-slate-line bg-bg-panel p-5">
-          <p className="flex items-center gap-2 text-[11.5px] text-ink-faint">
+          <p className="flex items-center gap-2 text-[12.5px] text-ink-faint">
             <Clock className="h-3.5 w-3.5 text-signal" /> In progress
           </p>
-          <p className="data-figure mt-2 text-[26px] text-ink">{inProgress}</p>
+          <p className="data-figure mt-2 text-[28px] text-ink">{inProgress}</p>
         </div>
         <div className="rounded-panel border border-slate-line bg-bg-panel p-5">
-          <p className="flex items-center gap-2 text-[11.5px] text-ink-faint">
+          <p className="flex items-center gap-2 text-[12.5px] text-ink-faint">
             <Award className="h-3.5 w-3.5 text-signal" /> Certificates earned
           </p>
-          <p className="data-figure mt-2 text-[26px] text-ink">{completed}</p>
+          <p className="data-figure mt-2 text-[28px] text-ink">{completed}</p>
         </div>
       </div>
 
@@ -108,7 +108,7 @@ export default function AcademyPage() {
             <button
               key={l}
               onClick={() => setLevel(l)}
-              className={`rounded-panel px-3 py-1.5 text-[12.5px] font-medium transition-colors ${
+              className={`rounded-panel px-3 py-1.5 text-[14.5px] font-medium transition-colors ${
                 level === l ? "bg-signal text-bg-deep" : "text-ink-dim hover:text-ink"
               }`}
             >
@@ -119,7 +119,7 @@ export default function AcademyPage() {
         <select
           value={domain}
           onChange={(e) => setDomain(e.target.value)}
-          className="rounded-panel border border-slate-line bg-bg-panel px-3 py-2 text-[12.5px] text-ink-dim outline-none focus:border-signal/50"
+          className="rounded-panel border border-slate-line bg-bg-panel px-3 py-2 text-[14.5px] text-ink-dim outline-none focus:border-signal/50"
         >
           {DOMAINS.map((d) => (
             <option key={d}>{d}</option>
@@ -136,17 +136,17 @@ export default function AcademyPage() {
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="rounded-pill bg-signal-soft px-2.5 py-0.5 font-mono text-[10px] text-signal">
+                <span className="rounded-pill bg-signal-soft px-2.5 py-0.5 font-mono text-[11px] text-signal">
                   {course.level}
                 </span>
-                <span className="flex items-center gap-1 font-mono text-[10.5px] text-ink-faint">
+                <span className="flex items-center gap-1 font-mono text-[11.5px] text-ink-faint">
                   <Clock className="h-3 w-3" /> {course.hours}h
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-[16px] font-semibold leading-snug text-ink">
+              <h3 className="mt-4 font-display text-[18px] font-semibold leading-snug text-ink">
                 {course.title}
               </h3>
-              <p className="mt-1.5 text-[12px] text-ink-faint">{course.modules} modules · {course.domain}</p>
+              <p className="mt-1.5 text-[14px] text-ink-faint">{course.modules} modules · {course.domain}</p>
             </div>
 
             <div className="mt-6">
@@ -157,8 +157,8 @@ export default function AcademyPage() {
                 />
               </div>
               <div className="mt-3 flex items-center justify-between">
-                <span className="text-[11px] text-ink-faint">{course.progress}% complete</span>
-                <button className="flex items-center gap-1.5 text-[12.5px] font-medium text-signal hover:text-signal-bright">
+                <span className="text-[12px] text-ink-faint">{course.progress}% complete</span>
+                <button className="flex items-center gap-1.5 text-[14.5px] font-medium text-signal hover:text-signal-bright">
                   <PlayCircle className="h-4 w-4" />
                   {course.progress === 0 ? "Start" : course.progress === 100 ? "Review" : "Resume"}
                 </button>
@@ -168,7 +168,7 @@ export default function AcademyPage() {
         ))}
 
         {filtered.length === 0 && (
-          <p className="col-span-full py-16 text-center text-[13.5px] text-ink-faint">
+          <p className="col-span-full py-16 text-center text-[15.5px] text-ink-faint">
             No courses match those filters yet — try a different level or domain.
           </p>
         )}

@@ -28,7 +28,7 @@ export default function Navbar() {
             <Activity className="h-4 w-4 text-signal" strokeWidth={2.25} />
             <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 rounded-full bg-signal animate-blink" />
           </span>
-          <span className="font-display text-[17px] font-semibold tracking-tight text-ink">
+          <span className="font-display text-[19px] font-semibold tracking-tight text-ink">
             BioCoder<span className="text-signal">MD</span>
           </span>
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-body text-[13.5px] font-medium text-ink-dim transition-colors hover:text-ink"
+              className="font-body text-[15.5px] font-medium text-ink-dim transition-colors hover:text-ink"
             >
               {link.label}
             </Link>
@@ -55,13 +55,13 @@ export default function Navbar() {
           </button>
           <Link
             href="/academy"
-            className="rounded-panel border border-slate-line px-4 py-2 text-[13px] font-medium text-ink-dim transition-colors hover:text-ink"
+            className="rounded-panel border border-slate-line px-4 py-2 text-[15px] font-medium text-ink-dim transition-colors hover:text-ink"
           >
             Sign in
           </Link>
           <Link
             href="/models"
-            className="rounded-panel bg-signal px-4 py-2 text-[13px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright"
+            className="rounded-panel bg-signal px-4 py-2 text-[15px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright"
           >
             Launch Sandbox
           </Link>

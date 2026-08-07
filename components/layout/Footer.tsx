@@ -28,14 +28,14 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-2">
             <div className="flex items-center gap-2.5">
               <Activity className="h-4 w-4 text-signal" strokeWidth={2.25} />
-              <span className="font-display text-[15px] font-semibold text-ink">
+              <span className="font-display text-[17px] font-semibold text-ink">
                 BioCoder<span className="text-signal">MD</span>
               </span>
             </div>
-            <p className="mt-3 max-w-[26ch] text-[13px] leading-relaxed text-ink-faint">
+            <p className="mt-3 max-w-[26ch] text-[15px] leading-relaxed text-ink-faint">
               Machine learning meets precision healthcare — for builders, clinicians, students, and patients.
             </p>
-            <div className="mt-5 flex items-center gap-2 text-[11.5px] text-ink-faint">
+            <div className="mt-5 flex items-center gap-2 text-[12.5px] text-ink-faint">
               <span className="h-1.5 w-1.5 rounded-full bg-signal animate-blink" />
               <span className="font-mono">All systems normal</span>
             </div>
@@ -49,7 +49,7 @@ export default function Footer() {
                   <li key={link}>
                     <Link
                       href="#"
-                      className="text-[13px] text-ink-dim transition-colors hover:text-ink"
+                      className="text-[15px] text-ink-dim transition-colors hover:text-ink"
                     >
                       {link}
                     </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className="hairline my-10" />
 
-        <div className="flex flex-col gap-3 text-[12px] text-ink-faint md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 text-[14px] text-ink-faint md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} BioCoder MD. All model outputs are for research and education —
             not a substitute for clinical judgment.

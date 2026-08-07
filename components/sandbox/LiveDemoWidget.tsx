@@ -32,11 +32,11 @@ export default function LiveDemoWidget() {
       <div className="flex items-center justify-between border-b border-slate-line pb-3">
         <div className="flex items-center gap-2">
           <Sparkles className="h-3.5 w-3.5 text-signal" />
-          <span className="font-mono text-[11px] tracking-wide text-ink-dim">
+          <span className="font-mono text-[12px] tracking-wide text-ink-dim">
             LIVE DEMO — Drug–Target Affinity
           </span>
         </div>
-        <span className="rounded-pill bg-signal-soft px-2 py-0.5 font-mono text-[10px] text-signal">
+        <span className="rounded-pill bg-signal-soft px-2 py-0.5 font-mono text-[11px] text-signal">
           GNN v2.3
         </span>
       </div>
@@ -56,10 +56,10 @@ export default function LiveDemoWidget() {
             }`}
           >
             <div>
-              <p className="text-[13px] font-medium text-ink">{l.name}</p>
-              <p className="font-mono text-[11px] text-ink-faint">{l.target}</p>
+              <p className="text-[15px] font-medium text-ink">{l.name}</p>
+              <p className="font-mono text-[12px] text-ink-faint">{l.target}</p>
             </div>
-            <span className="font-mono text-[10.5px] text-ink-faint">{l.smilesShort}</span>
+            <span className="font-mono text-[11.5px] text-ink-faint">{l.smilesShort}</span>
           </button>
         ))}
       </div>
@@ -67,7 +67,7 @@ export default function LiveDemoWidget() {
       <button
         onClick={runPrediction}
         disabled={loading}
-        className="mt-4 flex w-full items-center justify-center gap-2 rounded-panel bg-signal py-2.5 text-[13px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright disabled:opacity-60"
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-panel bg-signal py-2.5 text-[15px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright disabled:opacity-60"
       >
         {loading ? (
           <>
@@ -79,12 +79,12 @@ export default function LiveDemoWidget() {
       </button>
 
       <div className="mt-4 flex items-center justify-between rounded-panel bg-bg-deep/60 px-4 py-3">
-        <span className="text-[11.5px] text-ink-faint">Predicted pKd</span>
-        <span className="data-figure text-[20px] text-signal">
+        <span className="text-[12.5px] text-ink-faint">Predicted pKd</span>
+        <span className="data-figure text-[22px] text-signal">
           {result === null ? "—" : result.toFixed(2)}
         </span>
       </div>
-      <p className="mt-3 text-[11px] leading-relaxed text-ink-faint">
+      <p className="mt-3 text-[12px] leading-relaxed text-ink-faint">
         Illustrative output on a static ligand library. Full sandbox supports custom SMILES and target FASTA upload.
       </p>
     </div>

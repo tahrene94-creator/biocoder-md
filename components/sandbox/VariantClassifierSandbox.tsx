@@ -101,7 +101,7 @@ export default function VariantClassifierSandbox() {
       <div className="rounded-panel border border-slate-line bg-bg-panel p-6 shadow-panel">
         <div className="flex items-center justify-between">
           <p className="eyebrow">Input · VCF / HGVS</p>
-          <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-ink-dim hover:text-signal">
+          <label className="flex cursor-pointer items-center gap-1.5 text-[14px] text-ink-dim hover:text-signal">
             <UploadCloud className="h-3.5 w-3.5" />
             Upload .vcf
             <input
@@ -122,25 +122,25 @@ export default function VariantClassifierSandbox() {
           onChange={(e) => setInput(e.target.value)}
           spellCheck={false}
           rows={9}
-          className="mt-4 w-full resize-none rounded-panel border border-slate-line bg-bg-deep/60 p-4 font-mono text-[12.5px] leading-relaxed text-ink-dim outline-none focus:border-signal/50"
+          className="mt-4 w-full resize-none rounded-panel border border-slate-line bg-bg-deep/60 p-4 font-mono text-[14.5px] leading-relaxed text-ink-dim outline-none focus:border-signal/50"
         />
 
         {error && (
-          <p className="mt-3 flex items-center gap-1.5 text-[12px] text-alert-rose">
+          <p className="mt-3 flex items-center gap-1.5 text-[14px] text-alert-rose">
             <ShieldAlert className="h-3.5 w-3.5 shrink-0" />
             {error}
           </p>
         )}
 
         <div className="mt-4 flex items-center justify-between">
-          <p className="flex items-center gap-1.5 text-[11.5px] text-ink-faint">
+          <p className="flex items-center gap-1.5 text-[12.5px] text-ink-faint">
             <FileText className="h-3.5 w-3.5" />
             Synthetic sample loaded — swap in your own variant call set
           </p>
           <button
             onClick={runClassifier}
             disabled={loading}
-            className="flex items-center gap-2 rounded-panel bg-signal px-4 py-2.5 text-[13px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright disabled:opacity-60"
+            className="flex items-center gap-2 rounded-panel bg-signal px-4 py-2.5 text-[15px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright disabled:opacity-60"
           >
             {loading ? (
               <>
@@ -160,14 +160,14 @@ export default function VariantClassifierSandbox() {
         {!result && !loading && (
           <div className="mt-16 flex flex-col items-center justify-center text-center text-ink-faint">
             <CircleAlert className="mb-3 h-6 w-6" />
-            <p className="text-[13px]">Run the classifier to see a verdict and per-model scores.</p>
+            <p className="text-[15px]">Run the classifier to see a verdict and per-model scores.</p>
           </div>
         )}
 
         {loading && (
           <div className="mt-16 flex flex-col items-center justify-center text-center text-ink-faint">
             <Loader2 className="mb-3 h-6 w-6 animate-spin text-signal" />
-            <p className="text-[13px]">Scoring against ensemble variant-effect models…</p>
+            <p className="text-[15px]">Scoring against ensemble variant-effect models…</p>
           </div>
         )}
 
@@ -175,23 +175,23 @@ export default function VariantClassifierSandbox() {
           <div className="mt-4">
             <div className="flex items-center justify-between rounded-panel bg-bg-deep/60 p-4">
               <div>
-                <p className="font-display text-[17px] font-semibold text-ink">
-                  {result.gene} <span className="font-mono text-[13px] font-normal text-ink-faint">{result.variant}</span>
+                <p className="font-display text-[19px] font-semibold text-ink">
+                  {result.gene} <span className="font-mono text-[15px] font-normal text-ink-faint">{result.variant}</span>
                 </p>
-                <p className={`mt-1 flex items-center gap-1.5 text-[13px] font-medium ${VERDICT_STYLE[result.verdict]}`}>
+                <p className={`mt-1 flex items-center gap-1.5 text-[15px] font-medium ${VERDICT_STYLE[result.verdict]}`}>
                   <CircleCheck className="h-3.5 w-3.5" />
                   {result.verdict}
                 </p>
               </div>
               <div className="text-right">
-                <p className="data-figure text-[24px] text-signal">
+                <p className="data-figure text-[26px] text-signal">
                   {(result.confidence * 100).toFixed(1)}%
                 </p>
-                <p className="text-[10.5px] text-ink-faint">ensemble confidence</p>
+                <p className="text-[11.5px] text-ink-faint">ensemble confidence</p>
               </div>
             </div>
 
-            <p className="mt-5 mb-2 text-[11.5px] font-medium text-ink-dim">Per-model pathogenicity score</p>
+            <p className="mt-5 mb-2 text-[12.5px] font-medium text-ink-dim">Per-model pathogenicity score</p>
             <div className="h-[180px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={result.scores} layout="vertical" margin={{ left: 0, right: 16 }}>
@@ -216,7 +216,7 @@ export default function VariantClassifierSandbox() {
               </ResponsiveContainer>
             </div>
 
-            <p className="mt-4 text-[11px] leading-relaxed text-ink-faint">
+            <p className="mt-4 text-[12px] leading-relaxed text-ink-faint">
               Educational sandbox output on synthetic input — not a clinical diagnostic. Route confirmed calls through your lab's validated pipeline.
             </p>
           </div>

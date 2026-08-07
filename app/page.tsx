@@ -57,18 +57,18 @@ export default function LandingPage() {
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-pill border border-slate-line px-3 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-signal animate-blink" />
-            <span className="font-mono text-[11px] tracking-wide text-ink-dim">
+            <span className="font-mono text-[12px] tracking-wide text-ink-dim">
               LIVE — 214 models · 38 clinical apps · 11,204 learners
             </span>
           </div>
 
-          <h1 className="font-display text-[40px] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[52px] lg:text-[58px]">
+          <h1 className="font-display text-[44px] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[56px] lg:text-[62px]">
             Where machine learning
             <br />
             meets <span className="text-signal">precision healthcare.</span>
           </h1>
 
-          <p className="mt-6 max-w-[52ch] text-[16px] leading-relaxed text-ink-dim">
+          <p className="mt-6 max-w-[52ch] text-[18px] leading-relaxed text-ink-dim">
             BioCoder MD is one hub for the whole path: run a biomedical model,
             ship it as a clinical tool, teach it in a course, and explain it to a
             patient in plain language — without changing platforms.
@@ -77,14 +77,14 @@ export default function LandingPage() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/models"
-              className="inline-flex items-center gap-2 rounded-panel bg-signal px-5 py-3 text-[14px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright"
+              className="inline-flex items-center gap-2 rounded-panel bg-signal px-5 py-3 text-[16.5px] font-semibold text-bg-deep transition-colors hover:bg-signal-bright"
             >
               <FlaskConical className="h-4 w-4" />
               Open the ML sandbox
             </Link>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-ink-dim hover:text-ink"
+              className="inline-flex items-center gap-1.5 text-[16.5px] font-medium text-ink-dim hover:text-ink"
             >
               Read a dual-perspective review
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -98,8 +98,8 @@ export default function LandingPage() {
               ["4", "evidence tiers tracked per paper"],
             ].map(([value, desc]) => (
               <div key={desc}>
-                <dt className="data-figure text-[22px] text-ink">{value}</dt>
-                <dd className="mt-1 text-[11.5px] leading-snug text-ink-faint">{desc}</dd>
+                <dt className="data-figure text-[24px] text-ink">{value}</dt>
+                <dd className="mt-1 text-[12.5px] leading-snug text-ink-faint">{desc}</dd>
               </div>
             ))}
           </dl>
@@ -126,17 +126,17 @@ export default function LandingPage() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-panel bg-signal-soft">
                   <Icon className="h-5 w-5 text-signal" strokeWidth={2} />
                 </span>
-                <span className="font-mono text-[10.5px] tracking-[0.14em] text-ink-faint">
+                <span className="font-mono text-[11.5px] tracking-[0.14em] text-ink-faint">
                   {pillar.tag}
                 </span>
               </div>
-              <h3 className="mt-5 font-display text-[19px] font-semibold leading-snug text-ink">
+              <h3 className="mt-5 font-display text-[21px] font-semibold leading-snug text-ink">
                 {pillar.title}
               </h3>
-              <p className="mt-2.5 text-[13.5px] leading-relaxed text-ink-dim">
+              <p className="mt-2.5 text-[15.5px] leading-relaxed text-ink-dim">
                 {pillar.copy}
               </p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-[12.5px] font-medium text-signal opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-signal opacity-0 transition-opacity group-hover:opacity-100">
                 Explore <ArrowUpRight className="h-3.5 w-3.5" />
               </span>
             </Link>
@@ -157,8 +157,8 @@ export default function LandingPage() {
           ["Patients", "Read what a study actually means for care, in language built for you."],
         ].map(([who, copy]) => (
           <div key={who} className="rounded-panel border border-slate-line p-6">
-            <p className="font-display text-[15px] font-semibold text-ink">{who}</p>
-            <p className="mt-2 text-[13px] leading-relaxed text-ink-faint">{copy}</p>
+            <p className="font-display text-[17px] font-semibold text-ink">{who}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-ink-faint">{copy}</p>
           </div>
         ))}
       </section>

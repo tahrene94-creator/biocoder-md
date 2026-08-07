@@ -74,7 +74,7 @@ export default function Sidebar() {
             <div key={section.href}>
               <Link
                 href={section.href}
-                className={`flex items-center gap-3 rounded-panel px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
+                className={`flex items-center gap-3 rounded-panel px-3 py-2.5 text-[15.5px] font-medium transition-colors ${
                   active
                     ? "bg-signal-soft text-signal"
                     : "text-ink-dim hover:bg-bg-panel hover:text-ink"
@@ -88,7 +88,7 @@ export default function Sidebar() {
                   {section.children.map((child) => (
                     <span
                       key={child}
-                      className="cursor-pointer py-1 text-[12.5px] text-ink-faint hover:text-ink-dim"
+                      className="cursor-pointer py-1 text-[14.5px] text-ink-faint hover:text-ink-dim"
                     >
                       {child}
                     </span>

@@ -94,10 +94,10 @@ export default function InsightsPage() {
   return (
     <div className="mx-auto max-w-[1000px] px-5 py-12 md:px-8">
       <p className="eyebrow">Insights</p>
-      <h1 className="mt-3 font-display text-[32px] font-semibold tracking-tight text-ink sm:text-[38px]">
+      <h1 className="mt-3 font-display text-[36px] font-semibold tracking-tight text-ink sm:text-[42px]">
         Every paper, read two ways.
       </h1>
-      <p className="mt-3 max-w-[62ch] text-[14.5px] leading-relaxed text-ink-dim">
+      <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-ink-dim">
         Toggle between a technical briefing built for practitioners and a plain-language
         summary built for patients. Metadata is fetched automatically from each paper's DOI.
       </p>
@@ -107,7 +107,7 @@ export default function InsightsPage() {
           <button
             key={d}
             onClick={() => setDomain(d)}
-            className={`rounded-pill border px-3.5 py-1.5 text-[12.5px] font-medium transition-colors ${
+            className={`rounded-pill border px-3.5 py-1.5 text-[14.5px] font-medium transition-colors ${
               domain === d
                 ? "border-signal bg-signal-soft text-signal"
                 : "border-slate-line text-ink-dim hover:text-ink"
@@ -123,7 +123,7 @@ export default function InsightsPage() {
           <PaperReviewCard key={paper.doi} paper={paper} />
         ))}
         {filtered.length === 0 && (
-          <p className="py-16 text-center text-[13.5px] text-ink-faint">
+          <p className="py-16 text-center text-[15.5px] text-ink-faint">
             No reviews in this domain yet.
           </p>
         )}
