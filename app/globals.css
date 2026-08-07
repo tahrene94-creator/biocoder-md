@@ -61,6 +61,12 @@ body {
   @apply font-mono text-[12px] tracking-[0.18em] uppercase text-signal;
 }
 
+/* Short accent-colored divider bar under a page/section kicker, echoing the
+   "Organisation" -> orange rule -> heading pattern from the reference site. */
+.title-rule {
+  @apply my-4 h-[3px] w-12 rounded-full bg-signal;
+}
+
 .data-figure {
   @apply font-mono tabular-nums;
 }

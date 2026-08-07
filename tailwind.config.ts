@@ -18,25 +18,25 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          deep: "#FFFFFF",    // primary page background (was near-navy, now white)
-          panel: "#F5F6F8",   // raised surface / cards -- a hair off-white so they read as distinct from the page
+          deep: "#F8F9FA",    // primary page background -- light gray field (was pure white)
+          panel: "#FFFFFF",   // cards/panels are now white, so they lift off the gray page
           light: "#F6F8FA",
           panelLight: "#FFFFFF",
         },
         slate: {
           DEFAULT: "#D7DBE1",
-          line: "#E3E6EB",    // borders/dividers -- light gray instead of dark navy-gray
+          line: "#E3E6EB",
         },
         signal: {
-          DEFAULT: "#12B886", // emerald accent kept, still reads clearly on white
-          dim: "#0B7C5C",
-          bright: "#0E9A6C",  // darkened slightly from the dark-theme value for AA contrast on white
-          soft: "rgba(18,184,134,0.10)",
+          DEFAULT: "#E0590C", // burnt-orange accent (was emerald), matches reference site
+          dim: "#B0470A",
+          bright: "#F0722A",
+          soft: "rgba(224,89,12,0.10)",
         },
         ink: {
-          DEFAULT: "#1A2233",   // primary text -- dark charcoal, not pure black (was near-white)
-          dim: "#4B5768",       // secondary text
-          faint: "#8590A3",     // tertiary/meta text
+          DEFAULT: "#262B33",   // primary text -- slightly softer charcoal, closer to reference
+          dim: "#4B5768",
+          faint: "#8590A3",
           onLight: "#0E1524",
           onLightDim: "#5B6981",
         },

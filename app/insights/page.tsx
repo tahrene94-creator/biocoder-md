@@ -94,6 +94,7 @@ export default function InsightsPage() {
   return (
     <div className="mx-auto max-w-[1000px] px-5 py-12 md:px-8">
       <p className="eyebrow">Insights</p>
+      <div className="title-rule" />
       <h1 className="mt-3 font-display text-[36px] font-semibold tracking-tight text-ink sm:text-[42px]">
         Every paper, read two ways.
       </h1>
