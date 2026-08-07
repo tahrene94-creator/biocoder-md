@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light academic/institutional look is now the site-wide default -- see the
+   bg.deep / ink.DEFAULT token values in tailwind.config.ts, which every
+   component already references. */
+body {
+  @apply bg-bg-deep text-ink font-body antialiased;
+}
+
+::selection {
+  background: rgba(18, 184, 134, 0.35);
+}
+
+/* Visible keyboard focus everywhere -- never suppressed */
+:focus-visible {
+  outline: 2px solid #3fe1b0;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Hairline rule used between sections */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148,163,184,0.22), transparent);
+}
+
+/* Signature element: the "signal trace" divider. A single continuous SVG
+   waveform runs behind section seams, echoing a monitor's live trace.
+   It reads as a throughline connecting research -> bedside -> classroom ->
+   publication, the four pillars the product actually stitches together. */
+.signal-divider path {
+  stroke-dasharray: 1000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-divider path,
+  .animate-trace,
+  .animate-blink {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.eyebrow {
+  @apply font-mono text-[11px] tracking-[0.18em] uppercase text-signal;
+}
+
+.data-figure {
+  @apply font-mono tabular-nums;
+}
