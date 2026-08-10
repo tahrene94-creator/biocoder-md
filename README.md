@@ -22,8 +22,8 @@ npm run dev
 
 The palette is built around a clinical monitor: a deep navy/slate field
 (`bg-deep #0A0F1A`, `bg-panel #111A2B`), one emerald "signal" accent
-(`#12B886`) used the way a vitals monitor uses green — for anything live,
-normal, or actionable — and crisp white/ink text for clarity. Amber and rose
+(`#12B886`) used the way a vitals monitor uses green for anything live,
+normal, or actionable and crisp white/ink text for clarity. Amber and rose
 are reserved for warnings and elevated-risk states only.
 
 The **signal trace** (`components/ui/SignalDivider.tsx`) is the page's
@@ -38,9 +38,9 @@ app/
   layout.tsx          Root layout: Navbar + Sidebar + Footer shell
   page.tsx             Landing page (hero, live demo, 4-pillar grid)
   globals.css
-  models/page.tsx       /models — ML Hub with domain catalog + sandbox
-  academy/page.tsx       /academy — course dashboard
-  insights/page.tsx      /insights — dual-perspective paper reviews
+  models/page.tsx       /models ML Hub with domain catalog + sandbox
+  academy/page.tsx       /academy course dashboard
+  insights/page.tsx      /insights dual-perspective paper reviews
 components/
   layout/               Navbar, Sidebar, Footer
   sandbox/               LiveDemoWidget, VariantClassifierSandbox
@@ -72,25 +72,25 @@ product brief before real data is ever introduced.
 
 What's implemented in this scaffold:
 
-- **`middleware.ts`** — a per-request nonce-based Content Security Policy
+- **`middleware.ts`** a per-request nonce-based Content Security Policy
   plus `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
   `Permissions-Policy`, `Cross-Origin-Opener-Policy`,
   `Cross-Origin-Resource-Policy`, and HSTS (production only). This is the
   main defense against XSS, clickjacking, and MIME-sniffing attacks, and it
   runs at the edge on every route via an explicit matcher.
-- **`lib/validation.ts`** — Zod schemas at every point untrusted input enters
+- **`lib/validation.ts`** Zod schemas at every point untrusted input enters
   the app (pasted VCF text, uploaded files, DOI submissions, SMILES
   strings), with size caps and pattern checks against script/SQL injection
   markers. `VariantClassifierSandbox` enforces these client-side today; the
   same schemas must be re-applied server-side once real API routes exist —
   client validation is a UX convenience, never a security boundary.
-- **`next.config.js`** — `poweredByHeader: false` to stop advertising the
+- **`next.config.js`** `poweredByHeader: false` to stop advertising the
   framework version, and CI-enforced linting.
 - **Next.js pinned to `^14.2.30`**, which is patched against
   [CVE-2025-29927](https://nextjs.org/blog/cve-2025-29927), a critical
   (CVSS 9.1) middleware-authorization-bypass vulnerability affecting
-  14.0.0–14.2.24. Keep this pin current — re-check before every deploy.
-- **`.env.example`** — documents every secret the app needs without
+  14.0.0–14.2.24. Keep this pin current re-check before every deploy.
+- **`.env.example`** documents every secret the app needs without
   committing real values; `.env.local` is git-ignored by default.
 
 What's required before this touches real PHI (not yet implemented — flagged
@@ -100,7 +100,7 @@ so it isn't mistaken for done):
   data, RBAC/ABAC scoped per HIPAA's minimum-necessary standard, and
   short-lived, rotated session tokens (`SameSite=Strict` cookies).
 - **Encryption**: TLS 1.2+ (prefer 1.3) in transit — enforced by the HSTS
-  header above once behind real HTTPS — and AES-256 at rest for any
+  header above once behind real HTTPS and AES-256 at rest for any
   database or object storage holding ePHI.
 - **Audit logging**: every read/write of ePHI logged with who/what/when/
   outcome, written to an append-only, tamper-evident sink (see
