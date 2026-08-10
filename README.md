@@ -59,7 +59,7 @@ components/
   patient data SOPs.
 - DOI metadata fetching for `/insights` is hardcoded sample data; hook up to
   Crossref/PubMed for automated fetch on submission.
-- Auth (Clerk/NextAuth) and Stripe billing are not wired up — course
+- Auth (Clerk/NextAuth) and Stripe billing are not wired up course
   progress and certificates in `academy/page.tsx` use local sample state.
 
 ## Compliance note
@@ -93,7 +93,7 @@ What's implemented in this scaffold:
 - **`.env.example`** documents every secret the app needs without
   committing real values; `.env.local` is git-ignored by default.
 
-What's required before this touches real PHI (not yet implemented — flagged
+What's required before this touches real PHI (not yet implemented flagged
 so it isn't mistaken for done):
 
 - **Authentication & authorization**: MFA for all accounts touching clinical
