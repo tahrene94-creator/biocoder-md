@@ -55,7 +55,7 @@ components/
   stand-in. Wire these to real endpoints, e.g. `POST /api/models/variant-classify`,
   backed by the FastAPI/PyTorch runtime described in the platform brief.
 - `/apps` (Clinical & Hospital Applications Hub) is linked from nav/sidebar
-  but not yet built — next milestone alongside the FHIR/HL7 demo and mock
+  but not yet built next milestone alongside the FHIR/HL7 demo and mock
   patient data SOPs.
 - DOI metadata fetching for `/insights` is hardcoded sample data; hook up to
   Crossref/PubMed for automated fetch on submission.
@@ -104,7 +104,7 @@ so it isn't mistaken for done):
   database or object storage holding ePHI.
 - **Audit logging**: every read/write of ePHI logged with who/what/when/
   outcome, written to an append-only, tamper-evident sink (see
-  `AUDIT_LOG_ENDPOINT` in `.env.example`), retained per your BAA — HIPAA
+  `AUDIT_LOG_ENDPOINT` in `.env.example`), retained per your BAA - HIPAA
   guidance points to at least six years.
 - **FHIR/EHR integration**: SMART on FHIR (OAuth 2.0 + PKCE) with scoped
   access (`patient/Observation.read`, not blanket access), never raw
@@ -118,5 +118,5 @@ so it isn't mistaken for done):
 - **Dependency and secret scanning** in CI (`npm audit` / Dependabot,
   gitleaks or equivalent) on every PR.
 
-None of this is optional if PHI is ever involved — it's the operational
+None of this is optional if PHI is ever involved it's the operational
 floor under HIPAA's Security Rule (45 CFR §164.312), not a nice-to-have.
