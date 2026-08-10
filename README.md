@@ -99,7 +99,7 @@ so it isn't mistaken for done):
 - **Authentication & authorization**: MFA for all accounts touching clinical
   data, RBAC/ABAC scoped per HIPAA's minimum-necessary standard, and
   short-lived, rotated session tokens (`SameSite=Strict` cookies).
-- **Encryption**: TLS 1.2+ (prefer 1.3) in transit — enforced by the HSTS
+- **Encryption**: TLS 1.2+ (prefer 1.3) in transit enforced by the HSTS
   header above once behind real HTTPS and AES-256 at rest for any
   database or object storage holding ePHI.
 - **Audit logging**: every read/write of ePHI logged with who/what/when/
