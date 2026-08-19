@@ -9,7 +9,7 @@ Academy, and the `/insights` dual-perspective review hub.
 - Next.js 14 (App Router) + TypeScript
 - Tailwind CSS, design tokens in `tailwind.config.ts`
 - `lucide-react` icons, `recharts` for clinical/data charts, `framer-motion` available for future motion work
-- Fonts: **Space Grotesk** (display), **IBM Plex Sans** (body), **IBM Plex Mono** (data/metrics — used for anything numeric: AUROC, pKd, DOIs, code)
+- Fonts: **Space Grotesk** (display), **IBM Plex Sans** (body), **IBM Plex Mono** (data/metrics used for anything numeric: AUROC, pKd, DOIs, code)
 
 ## Getting started
 
@@ -22,8 +22,8 @@ npm run dev
 
 The palette is built around a clinical monitor: a deep navy/slate field
 (`bg-deep #0A0F1A`, `bg-panel #111A2B`), one emerald "signal" accent
-(`#12B886`) used the way a vitals monitor uses green — for anything live,
-normal, or actionable — and crisp white/ink text for clarity. Amber and rose
+(`#12B886`) used the way a vitals monitor uses green for anything live,
+normal, or actionable and crisp white/ink text for clarity. Amber and rose
 are reserved for warnings and elevated-risk states only.
 
 The **signal trace** (`components/ui/SignalDivider.tsx`) is the page's
@@ -38,9 +38,9 @@ app/
   layout.tsx          Root layout: Navbar + Sidebar + Footer shell
   page.tsx             Landing page (hero, live demo, 4-pillar grid)
   globals.css
-  models/page.tsx       /models — ML Hub with domain catalog + sandbox
-  academy/page.tsx       /academy — course dashboard
-  insights/page.tsx      /insights — dual-perspective paper reviews
+  models/page.tsx       /models ML Hub with domain catalog + sandbox
+  academy/page.tsx       /academy course dashboard
+  insights/page.tsx      /insights dual-perspective paper reviews
 components/
   layout/               Navbar, Sidebar, Footer
   sandbox/               LiveDemoWidget, VariantClassifierSandbox
@@ -55,11 +55,11 @@ components/
   stand-in. Wire these to real endpoints, e.g. `POST /api/models/variant-classify`,
   backed by the FastAPI/PyTorch runtime described in the platform brief.
 - `/apps` (Clinical & Hospital Applications Hub) is linked from nav/sidebar
-  but not yet built — next milestone alongside the FHIR/HL7 demo and mock
+  but not yet built next milestone alongside the FHIR/HL7 demo and mock
   patient data SOPs.
 - DOI metadata fetching for `/insights` is hardcoded sample data; hook up to
   Crossref/PubMed for automated fetch on submission.
-- Auth (Clerk/NextAuth) and Stripe billing are not wired up — course
+- Auth (Clerk/NextAuth) and Stripe billing are not wired up course
   progress and certificates in `academy/page.tsx` use local sample state.
 
 ## Compliance note
@@ -72,39 +72,39 @@ product brief before real data is ever introduced.
 
 What's implemented in this scaffold:
 
-- **`middleware.ts`** — a per-request nonce-based Content Security Policy
+- **`middleware.ts`** a per-request nonce-based Content Security Policy
   plus `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
   `Permissions-Policy`, `Cross-Origin-Opener-Policy`,
   `Cross-Origin-Resource-Policy`, and HSTS (production only). This is the
   main defense against XSS, clickjacking, and MIME-sniffing attacks, and it
   runs at the edge on every route via an explicit matcher.
-- **`lib/validation.ts`** — Zod schemas at every point untrusted input enters
+- **`lib/validation.ts`** Zod schemas at every point untrusted input enters
   the app (pasted VCF text, uploaded files, DOI submissions, SMILES
   strings), with size caps and pattern checks against script/SQL injection
   markers. `VariantClassifierSandbox` enforces these client-side today; the
   same schemas must be re-applied server-side once real API routes exist —
   client validation is a UX convenience, never a security boundary.
-- **`next.config.js`** — `poweredByHeader: false` to stop advertising the
+- **`next.config.js`** `poweredByHeader: false` to stop advertising the
   framework version, and CI-enforced linting.
 - **Next.js pinned to `^14.2.30`**, which is patched against
   [CVE-2025-29927](https://nextjs.org/blog/cve-2025-29927), a critical
   (CVSS 9.1) middleware-authorization-bypass vulnerability affecting
-  14.0.0–14.2.24. Keep this pin current — re-check before every deploy.
-- **`.env.example`** — documents every secret the app needs without
+  14.0.0–14.2.24. Keep this pin current re-check before every deploy.
+- **`.env.example`** documents every secret the app needs without
   committing real values; `.env.local` is git-ignored by default.
 
-What's required before this touches real PHI (not yet implemented — flagged
+What's required before this touches real PHI (not yet implemented flagged
 so it isn't mistaken for done):
 
 - **Authentication & authorization**: MFA for all accounts touching clinical
   data, RBAC/ABAC scoped per HIPAA's minimum-necessary standard, and
   short-lived, rotated session tokens (`SameSite=Strict` cookies).
-- **Encryption**: TLS 1.2+ (prefer 1.3) in transit — enforced by the HSTS
-  header above once behind real HTTPS — and AES-256 at rest for any
+- **Encryption**: TLS 1.2+ (prefer 1.3) in transit enforced by the HSTS
+  header above once behind real HTTPS and AES-256 at rest for any
   database or object storage holding ePHI.
 - **Audit logging**: every read/write of ePHI logged with who/what/when/
   outcome, written to an append-only, tamper-evident sink (see
-  `AUDIT_LOG_ENDPOINT` in `.env.example`), retained per your BAA — HIPAA
+  `AUDIT_LOG_ENDPOINT` in `.env.example`), retained per your BAA - HIPAA
   guidance points to at least six years.
 - **FHIR/EHR integration**: SMART on FHIR (OAuth 2.0 + PKCE) with scoped
   access (`patient/Observation.read`, not blanket access), never raw
@@ -118,5 +118,5 @@ so it isn't mistaken for done):
 - **Dependency and secret scanning** in CI (`npm audit` / Dependabot,
   gitleaks or equivalent) on every PR.
 
-None of this is optional if PHI is ever involved — it's the operational
+None of this is optional if PHI is ever involved it's the operational
 floor under HIPAA's Security Rule (45 CFR §164.312), not a nice-to-have.
